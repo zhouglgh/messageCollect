@@ -1,0 +1,12 @@
+./MegaCli/MegaCli64 -LDBI -ProgDsply -Lall -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -LDBI -ProgDsply -Lall -aALL
+{
+                                     
+
+Exit Code: 0x00
+}

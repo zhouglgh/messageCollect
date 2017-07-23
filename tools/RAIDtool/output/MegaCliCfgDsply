@@ -1,0 +1,12 @@
+./MegaCli/MegaCli64 -CfgDsply -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -CfgDsply -aALL
+{
+                                     
+
+Exit Code: 0x00
+}

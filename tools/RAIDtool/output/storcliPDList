@@ -1,0 +1,10 @@
+./MegaRAID/storcli/storcli64 -PDList -aALL
+{
+
+Exit Code: 0x01
+}
+./MegaRAID/storcli/storcli64 -PDList -aALL
+{
+
+Exit Code: 0x01
+}

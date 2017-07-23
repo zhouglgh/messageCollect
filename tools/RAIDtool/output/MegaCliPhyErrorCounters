@@ -1,0 +1,12 @@
+./MegaCli/MegaCli64 -PhyErrorCounters -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -PhyErrorCounters -aALL
+{
+                                     
+
+Exit Code: 0x00
+}

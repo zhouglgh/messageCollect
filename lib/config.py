@@ -21,7 +21,9 @@ class ConfInfo(object):
 	def get_software_info(self):
 		return self.conp.items('application')
 	def get_file_baseinfo(self):
-		return self.conp.items('baseinfo')
+		return self.conp.get('file_base','name')
+	def get_items(self):
+		return self.conp.items('items')
 		
 if __name__ == '__main__':
 	print 'This is ConfigParser.'

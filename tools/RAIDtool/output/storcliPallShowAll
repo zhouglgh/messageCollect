@@ -1,0 +1,10 @@
+./MegaRAID/storcli/storcli64 /call/pall show all
+{
+Status = Failure
+Description = No Controller found
+}
+./MegaRAID/storcli/storcli64 /call/pall show all
+{
+Status = Failure
+Description = No Controller found
+}

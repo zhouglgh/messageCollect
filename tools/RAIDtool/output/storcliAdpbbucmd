@@ -1,0 +1,10 @@
+./MegaRAID/storcli/storcli64 -adpbbucmd -aALL
+{
+
+Exit Code: 0x01
+}
+./MegaRAID/storcli/storcli64 -adpbbucmd -aALL
+{
+
+Exit Code: 0x01
+}

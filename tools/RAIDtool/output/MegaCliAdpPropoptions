@@ -1,0 +1,636 @@
+./MegaCli/MegaCli64 -AdpGetProp CacheFlushInterval -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp RebuildRate -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp PatrolReadRate -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp ForceSGPIO -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp BgiRate -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp CCRate -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp ReconRate -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp SpinupDriveCount -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp SpinupDelay -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp CoercionMode -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp ClusterEnable -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp PredFailPollInterval -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp BatWarnDsbl -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp EccBucketSize -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp EccBucketLeakRate -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp EccBucketCount -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp AbortCCOnError -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp AlarmDsply -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp SMARTCpyBkEnbl -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp SSDSMARTCpyBkEnbl -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp NCQDsply -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp MaintainPdFailHistoryEnbl -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp RstrHotSpareOnInsert -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp EnblSpinDownUnConfigDrvs -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp DisableOCR -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp BootWithPinnedCache -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp enblPI -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp PreventPIImport -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp AutoEnhancedImportDsply -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp AutoDetectBackPlaneDsbl -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp CopyBackDsbl -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp LoadBalanceMode -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp UseFDEOnlyEncrypt -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp WBSupport -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp EnableJBOD -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp DsblCacheBypass -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp ExposeEnclDevicesEnbl -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp SpinDownTime -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp PrCorrectUncfgdAreas -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp UseDiskActivityforLocate -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp ENABLEEGHSP -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp ENABLEEUG -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp ENABLEESMARTER -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp Perfmode -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp PerfModeValues -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp DefaultLdPSPolicy -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp DisableLdPsInterval -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp DisableLdPsTime -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp SpinUpEncDrvCnt -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp SpinUpEncDelay -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp PrCorrectUncfgdAreas -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp DsblSpinDownHSP -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp SupportSSDPatrolRead -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp CacheFlushInterval -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp RebuildRate -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp PatrolReadRate -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp ForceSGPIO -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp BgiRate -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp CCRate -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp ReconRate -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp SpinupDriveCount -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp SpinupDelay -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp CoercionMode -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp ClusterEnable -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp PredFailPollInterval -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp BatWarnDsbl -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp EccBucketSize -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp EccBucketLeakRate -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp EccBucketCount -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp AbortCCOnError -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp AlarmDsply -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp SMARTCpyBkEnbl -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp SSDSMARTCpyBkEnbl -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp NCQDsply -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp MaintainPdFailHistoryEnbl -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp RstrHotSpareOnInsert -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp EnblSpinDownUnConfigDrvs -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp DisableOCR -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp BootWithPinnedCache -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp enblPI -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp PreventPIImport -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp AutoEnhancedImportDsply -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp AutoDetectBackPlaneDsbl -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp CopyBackDsbl -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp LoadBalanceMode -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp UseFDEOnlyEncrypt -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp WBSupport -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp EnableJBOD -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp DsblCacheBypass -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp ExposeEnclDevicesEnbl -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp SpinDownTime -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp PrCorrectUncfgdAreas -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp UseDiskActivityforLocate -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp ENABLEEGHSP -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp ENABLEEUG -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp ENABLEESMARTER -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp Perfmode -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp PerfModeValues -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp DefaultLdPSPolicy -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp DisableLdPsInterval -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp DisableLdPsTime -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp SpinUpEncDrvCnt -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp SpinUpEncDelay -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp PrCorrectUncfgdAreas -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp DsblSpinDownHSP -aALL
+{
+                                     
+
+Exit Code: 0x00
+}
+./MegaCli/MegaCli64 -AdpGetProp SupportSSDPatrolRead -aALL
+{
+                                     
+
+Exit Code: 0x00
+}

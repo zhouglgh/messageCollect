@@ -1,0 +1,196 @@
+[ 2017-07-03 21:40:27 ] [INFO ] [../lib/common.sh 217]  collect start.
+[ 2017-07-03 21:40:27 ] [INFO ] [../lib/common.sh 239] group [base] collect start.
+[ 2017-07-03 21:40:27 ] [INFO ] [../lib/common.sh 239] group [megaraid] collect start.
+[ 2017-07-03 21:40:27 ] [INFO ] [../lib/common.sh 271] [get_storage_info] excute start.
+[ 2017-07-03 21:40:27 ] [INFO ] [../lib/common.sh 161] [./MegaRAID/storcli/storcli64 -AdpAllInfo -aALL] is called.
+[ 2017-07-03 21:40:27 ] [ERROR] [../lib/common.sh 175] [./MegaRAID/storcli/storcli64 -AdpAllInfo -aALL] failed.Ret:1. Desc:
+Exit Code: 0x01
+[ 2017-07-03 21:40:27 ] [INFO ] [../lib/common.sh 161] [./MegaRAID/storcli/storcli64 -PDList -aALL] is called.
+[ 2017-07-03 21:40:27 ] [ERROR] [../lib/common.sh 175] [./MegaRAID/storcli/storcli64 -PDList -aALL] failed.Ret:1. Desc:
+Exit Code: 0x01
+[ 2017-07-03 21:40:27 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -LDInfo -Lall -aALL ] is called.
+[ 2017-07-03 21:40:27 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -LDInfo -Lall -aALL ] successfull.
+[ 2017-07-03 21:40:27 ] [INFO ] [../lib/common.sh 271] [get_sas_raid_log] excute start.
+[ 2017-07-03 21:40:27 ] [INFO ] [../lib/common.sh 161] [get_sas_raid_log] is called.
+[ 2017-07-03 21:40:27 ] [INFO ] [../lib/common.sh 161] [./MegaRAID/storcli/storcli64 /call/vall show all] is called.
+[ 2017-07-03 21:40:27 ] [INFO ] [../lib/common.sh 178] [./MegaRAID/storcli/storcli64 /call/vall show all] successfull.
+[ 2017-07-03 21:40:27 ] [INFO ] [../lib/common.sh 161] [./MegaRAID/storcli/storcli64 -adpalilog -aALL] is called.
+[ 2017-07-03 21:40:28 ] [ERROR] [../lib/common.sh 175] [./MegaRAID/storcli/storcli64 -adpalilog -aALL] failed.Ret:1. Desc:
+Exit Code: 0x01
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaRAID/storcli/storcli64 -adpbbucmd -aALL] is called.
+[ 2017-07-03 21:40:28 ] [ERROR] [../lib/common.sh 175] [./MegaRAID/storcli/storcli64 -adpbbucmd -aALL] failed.Ret:1. Desc:
+Exit Code: 0x01
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaRAID/storcli/storcli64 /call/pall show all] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaRAID/storcli/storcli64 /call/pall show all] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [get_sas_raid_log] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 289] get_sas_raid_log excute ok.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 271] [get_lsi2308_log] excute start.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 271] [get_lsi3008_log] excute start.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 271] [get_megaraid_log] excute start.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -FwTermLog Dsply -aALL] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -FwTermLog Dsply -aALL] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpEventLog -GetEventlogInfo -aALL] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpEventLog -GetEventlogInfo -aALL] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -FwTermLog Dsply -aALL] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -FwTermLog Dsply -aALL] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpEventLog -GetEvents -f output/MgEvtLog -aALL] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpEventLog -GetEvents -f output/MgEvtLog -aALL] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpEventLog -GetSinceShutdown -f output/MegaCliAdpEvtLogGetSinceShutdown  -aALL] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpEventLog -GetSinceShutdown -f output/MegaCliAdpEvtLogGetSinceShutdown  -aALL] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpEventLog -GetSinceReboot -f output/MegaCliAdpEvtLogGetSinceReboot.log  -aALL] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpEventLog -GetSinceReboot -f output/MegaCliAdpEvtLogGetSinceReboot.log  -aALL] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpEventLog -GetLatest 50 -f output/MegaCliAdpEvtLogLatest50 -aALL] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpEventLog -GetLatest 50 -f output/MegaCliAdpEvtLogLatest50 -aALL] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpAutoRbld -Dsply -aALL] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpAutoRbld -Dsply -aALL] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp CacheFlushInterval -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp CacheFlushInterval -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp RebuildRate -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp RebuildRate -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp PatrolReadRate -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp PatrolReadRate -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp ForceSGPIO -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp ForceSGPIO -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp BgiRate -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp BgiRate -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp CCRate -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp CCRate -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp ReconRate -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp ReconRate -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp SpinupDriveCount -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp SpinupDriveCount -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp SpinupDelay -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp SpinupDelay -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp CoercionMode -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp CoercionMode -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp ClusterEnable -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp ClusterEnable -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp PredFailPollInterval -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp PredFailPollInterval -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp BatWarnDsbl -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp BatWarnDsbl -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp EccBucketSize -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp EccBucketSize -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp EccBucketLeakRate -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp EccBucketLeakRate -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp EccBucketCount -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp EccBucketCount -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp AbortCCOnError -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp AbortCCOnError -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp AlarmDsply -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp AlarmDsply -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp SMARTCpyBkEnbl -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp SMARTCpyBkEnbl -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp SSDSMARTCpyBkEnbl -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp SSDSMARTCpyBkEnbl -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp NCQDsply -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp NCQDsply -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp MaintainPdFailHistoryEnbl -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp MaintainPdFailHistoryEnbl -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp RstrHotSpareOnInsert -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp RstrHotSpareOnInsert -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp EnblSpinDownUnConfigDrvs -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp EnblSpinDownUnConfigDrvs -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp DisableOCR -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp DisableOCR -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp BootWithPinnedCache -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp BootWithPinnedCache -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp enblPI -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp enblPI -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp PreventPIImport -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp PreventPIImport -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp AutoEnhancedImportDsply -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp AutoEnhancedImportDsply -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp AutoDetectBackPlaneDsbl -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp AutoDetectBackPlaneDsbl -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp CopyBackDsbl -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp CopyBackDsbl -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp LoadBalanceMode -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp LoadBalanceMode -aALL ] successfull.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp UseFDEOnlyEncrypt -aALL ] is called.
+[ 2017-07-03 21:40:28 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp UseFDEOnlyEncrypt -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp WBSupport -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp WBSupport -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp EnableJBOD -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp EnableJBOD -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp DsblCacheBypass -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp DsblCacheBypass -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp ExposeEnclDevicesEnbl -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp ExposeEnclDevicesEnbl -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp SpinDownTime -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp SpinDownTime -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp PrCorrectUncfgdAreas -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp PrCorrectUncfgdAreas -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp UseDiskActivityforLocate -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp UseDiskActivityforLocate -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp ENABLEEGHSP -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp ENABLEEGHSP -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp ENABLEEUG -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp ENABLEEUG -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp ENABLEESMARTER -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp ENABLEESMARTER -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp Perfmode -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp Perfmode -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp PerfModeValues -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp PerfModeValues -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp DefaultLdPSPolicy -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp DefaultLdPSPolicy -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp DisableLdPsInterval -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp DisableLdPsInterval -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp DisableLdPsTime -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp DisableLdPsTime -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp SpinUpEncDrvCnt -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp SpinUpEncDrvCnt -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp SpinUpEncDelay -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp SpinUpEncDelay -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp PrCorrectUncfgdAreas -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp PrCorrectUncfgdAreas -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp DsblSpinDownHSP -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp DsblSpinDownHSP -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetProp SupportSSDPatrolRead -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetProp SupportSSDPatrolRead -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpGetTime -aAll ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpGetTime -aAll ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpBootDrive -Get -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpBootDrive -Get -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -AdpBIOS -Dsply -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -AdpBIOS -Dsply -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -CfgDsply -aALL] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -CfgDsply -aALL] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -CfgFreeSpaceInfo -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -CfgFreeSpaceInfo -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -LDGetProp -DskCache -Lall -aALL] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -LDGetProp -DskCache -Lall -aALL] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -LDInit -ShowProg -Lall -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -LDInit -ShowProg -Lall -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -LDInit -ProgDsply -Lall -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -LDInit -ProgDsply -Lall -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -LDCC -ShowProg -Lall -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -LDCC -ShowProg -Lall -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -LDCC -ProgDsply -Lall -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -LDCC -ProgDsply -Lall -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -LDBI -GetSetting -Lall -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -LDBI -GetSetting -Lall -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -LDBI -ShowProg -Lall -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -LDBI -ShowProg -Lall -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -LDBI -ProgDsply -Lall -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -LDBI -ProgDsply -Lall -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -LDPDInfo -aALL] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -LDPDInfo -aALL] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -LDGetNum -aALL] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -LDGetNum -aALL] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -EncInfo -aALL] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -EncInfo -aALL] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -PhyErrorCounters -aALL] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -PhyErrorCounters -aALL] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [./MegaCli/MegaCli64 -PDGetNum -aALL ] is called.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 178] [./MegaCli/MegaCli64 -PDGetNum -aALL ] successfull.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 239] group [pmcraid] collect start.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 271] [get_pmc_info] excute start.
+[ 2017-07-03 21:40:29 ] [INFO ] [../lib/common.sh 161] [././Arcconf-Linux/arcconf-x64 savesupportarchive > output/pmc_tool_run.log] is called.
+[ 2017-07-03 21:40:50 ] [INFO ] [../lib/common.sh 178] [././Arcconf-Linux/arcconf-x64 savesupportarchive > output/pmc_tool_run.log] successfull.
+[ 2017-07-03 21:40:50 ] [INFO ] [../lib/common.sh 161] [tar czf support.tar.gz -C /var/log Support] is called.
+[ 2017-07-03 21:40:51 ] [INFO ] [../lib/common.sh 178] [tar czf support.tar.gz -C /var/log Support] successfull.
+[ 2017-07-03 21:40:51 ] [INFO ] [../lib/common.sh 161] [mv support.tar.gz output/] is called.
+[ 2017-07-03 21:40:51 ] [INFO ] [../lib/common.sh 178] [mv support.tar.gz output/] successfull.
+[ 2017-07-03 21:40:51 ] [INFO ] [../lib/common.sh 303] raid collect finished.

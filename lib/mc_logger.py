@@ -40,10 +40,10 @@ class mc_logger(object):
 
 		#define the log formate
 		if not 'formatter' in dir():
-			formatter_str =  '%(asctime)s %(levelno)-8s: %(message)s'
+			formatter_str =  '%(asctime)s %(levelname)-8s: %(message)s'
 		else:
 			if not formatter_str:
-				formatter_str = '%(asctime)s %(levelno)-8s: %(funcName)s :%(message)s'
+				formatter_str = '%(asctime)s %(levelname)-8s: %(funcName)s :%(message)s'
 
 		#define the log path
 		if not file_log:
