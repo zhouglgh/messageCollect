@@ -1,0 +1,120 @@
+binfmt_misc 17468 1 - Live 0xffffffffa071e000
+xt_CHECKSUM 12549 1 - Live 0xffffffffa0719000
+ipt_MASQUERADE 12678 3 - Live 0xffffffffa070f000
+nf_nat_masquerade_ipv4 13412 1 ipt_MASQUERADE, Live 0xffffffffa0714000
+tun 27183 1 - Live 0xffffffffa0707000
+ip6t_rpfilter 12546 1 - Live 0xffffffffa0702000
+ip6t_REJECT 12939 2 - Live 0xffffffffa06ec000
+ipt_REJECT 12541 4 - Live 0xffffffffa06d8000
+xt_conntrack 12760 10 - Live 0xffffffffa06c3000
+rdma_ucm 26797 0 - Live 0xffffffffa06fa000 (OF)
+ib_ucm 22546 0 - Live 0xffffffffa06f3000 (OF)
+rdma_cm 49851 1 rdma_ucm, Live 0xffffffffa06de000 (OF)
+iw_cm 36940 1 rdma_cm, Live 0xffffffffa06cd000 (OF)
+ebtable_nat 12807 0 - Live 0xffffffffa06be000
+ebtable_broute 12731 0 - Live 0xffffffffa06c8000
+bridge 115385 1 ebtable_broute, Live 0xffffffffa06a0000
+stp 12976 1 bridge, Live 0xffffffffa069b000
+llc 14552 2 bridge,stp, Live 0xffffffffa0692000
+ebtable_filter 12827 0 - Live 0xffffffffa0661000
+ebtables 30913 3 ebtable_nat,ebtable_broute,ebtable_filter, Live 0xffffffffa0689000
+ib_ipoib 136865 0 - Live 0xffffffffa0666000 (OF)
+ib_cm 47035 3 ib_ucm,rdma_cm,ib_ipoib, Live 0xffffffffa0654000 (OF)
+xfs_ck 12923 0 - Live 0xffffffffa064f000 (OF)
+ip6table_nat 12864 1 - Live 0xffffffffa064a000
+nf_conntrack_ipv6 18738 6 - Live 0xffffffffa0644000
+nf_defrag_ipv6 34651 1 nf_conntrack_ipv6, Live 0xffffffffa0636000
+nf_nat_ipv6 14131 1 ip6table_nat, Live 0xffffffffa062d000
+ip6table_mangle 12700 1 - Live 0xffffffffa0628000
+ip6table_security 12710 1 - Live 0xffffffffa0623000
+ip6table_raw 12683 1 - Live 0xffffffffa05fe000
+kfm_net 12723 0 - Live 0xffffffffa030e000 (OF)
+ip6table_filter 12815 1 - Live 0xffffffffa02d4000
+ib_uverbs 75038 2 rdma_ucm,ib_ucm, Live 0xffffffffa060f000 (OF)
+ip6_tables 27025 5 ip6table_nat,ip6table_mangle,ip6table_security,ip6table_raw,ip6table_filter, Live 0xffffffffa0603000
+kpatch_kfm_net 27670 1 - Live 0xffffffffa05f6000 (OF)
+ib_umad 22330 0 - Live 0xffffffffa05d3000 (OF)
+iptable_nat 12875 1 - Live 0xffffffffa05ed000
+nf_conntrack_ipv4 14862 6 - Live 0xffffffffa05e8000
+nf_defrag_ipv4 12729 1 nf_conntrack_ipv4, Live 0xffffffffa05e3000
+nf_nat_ipv4 14115 1 iptable_nat, Live 0xffffffffa05ce000
+nf_nat 26146 3 nf_nat_masquerade_ipv4,nf_nat_ipv6,nf_nat_ipv4, Live 0xffffffffa05db000
+nf_conntrack 105702 7 nf_nat_masquerade_ipv4,xt_conntrack,nf_conntrack_ipv6,nf_nat_ipv6,nf_conntrack_ipv4,nf_nat_ipv4,nf_nat, Live 0xffffffffa05b3000
+iptable_mangle 12695 1 - Live 0xffffffffa05ae000
+iptable_security 12705 1 - Live 0xffffffffa05a1000
+iptable_raw 12678 1 - Live 0xffffffffa059c000
+kfm_md 12674 0 - Live 0xffffffffa0373000 (OF)
+iptable_filter 12810 1 - Live 0xffffffffa02c1000
+ip_tables 27239 5 iptable_nat,iptable_mangle,iptable_security,iptable_raw,iptable_filter, Live 0xffffffffa05a6000
+mlx5_ib 195825 0 - Live 0xffffffffa056b000 (OF)
+kpatch_kfm_md 30982 1 - Live 0xffffffffa0504000 (OF)
+mlx5_core 379427 1 mlx5_ib, Live 0xffffffffa050d000 (OF)
+mlx4_en 132558 0 - Live 0xffffffffa04e2000 (OF)
+vxlan 37409 2 mlx5_core,mlx4_en, Live 0xffffffffa04d7000
+ip_tunnel 23760 1 vxlan, Live 0xffffffffa04d0000
+ptp 18933 2 mlx5_core,mlx4_en, Live 0xffffffffa0308000
+pps_core 19106 1 ptp, Live 0xffffffffa036d000
+mlx4_ib 195768 0 - Live 0xffffffffa049f000 (OF)
+ib_sa 33950 5 rdma_ucm,rdma_cm,ib_ipoib,ib_cm,mlx4_ib, Live 0xffffffffa0363000 (OF)
+ib_mad 55975 4 ib_cm,ib_umad,mlx4_ib,ib_sa, Live 0xffffffffa0490000 (OF)
+kfm_deadlock 12686 0 - Live 0xffffffffa048b000 (OF)
+ib_core 141096 12 rdma_ucm,ib_ucm,rdma_cm,iw_cm,ib_ipoib,ib_cm,ib_uverbs,ib_umad,mlx5_ib,mlx4_ib,ib_sa,ib_mad, Live 0xffffffffa0467000 (OF)
+ib_addr 18923 3 rdma_ucm,rdma_cm,ib_core, Live 0xffffffffa035d000 (OF)
+kpatch_spinlock 14365 1 - Live 0xffffffffa0358000 (OF)
+mlx4_core 348954 2 mlx4_en,mlx4_ib, Live 0xffffffffa0410000 (OF)
+mlx_compat 16639 17 rdma_ucm,ib_ucm,rdma_cm,iw_cm,ib_ipoib,ib_cm,ib_uverbs,ib_umad,mlx5_ib,mlx5_core,mlx4_en,mlx4_ib,ib_sa,ib_mad,ib_core,ib_addr,mlx4_core, Live 0xffffffffa0352000 (OF)
+kfm_mem 12736 0 - Live 0xffffffffa034d000 (OF)
+kfm_cpu 13212 0 - Live 0xffffffffa0348000 (OF)
+kfm_apei 12682 0 - Live 0xffffffffa0303000 (OF)
+kpatch_kfm_apei 18461 1 - Live 0xffffffffa0315000 (OF)
+kfm_pcie 12682 0 - Live 0xffffffffa02f2000 (OF)
+kpatch_kfm_pcie 14505 1 - Live 0xffffffffa02fe000 (OF)
+kfm 15189 15 kfm_net,kfm_md,kfm_deadlock,kfm_mem,kfm_cpu,kfm_apei,kfm_pcie, Live 0xffffffffa02ed000 (OF)
+kpatch 52075 5 kpatch_kfm_net,kpatch_kfm_md,kpatch_spinlock,kpatch_kfm_apei,kpatch_kfm_pcie, Live 0xffffffffa033a000 (OF)
+coretemp 13435 0 - Live 0xffffffffa02e0000
+ext4 562391 1 - Live 0xffffffffa0385000
+mbcache 14958 1 ext4, Live 0xffffffffa0279000
+jbd2 102940 1 ext4, Live 0xffffffffa031f000
+crct10dif_pclmul 14289 0 - Live 0xffffffffa02e8000
+crc32_pclmul 13113 0 - Live 0xffffffffa0291000
+crc32c_intel 22079 0 - Live 0xffffffffa02d9000
+ghash_clmulni_intel 13259 0 - Live 0xffffffffa02bc000
+aesni_intel 52846 0 - Live 0xffffffffa02c6000
+ppdev 17671 0 - Live 0xffffffffa02a0000
+lrw 13286 1 aesni_intel, Live 0xffffffffa028c000
+gf128mul 14951 1 lrw, Live 0xffffffffa029b000
+glue_helper 13990 1 aesni_intel, Live 0xffffffffa0296000
+ablk_helper 13597 1 aesni_intel, Live 0xffffffffa02aa000
+cryptd 20359 3 ghash_clmulni_intel,aesni_intel,ablk_helper, Live 0xffffffffa0273000
+vmw_balloon 13415 0 - Live 0xffffffffa026e000
+pcspkr 12718 0 - Live 0xffffffffa0266000
+serio_raw 13462 0 - Live 0xffffffffa024f000
+parport_pc 28165 0 - Live 0xffffffffa0284000
+parport 42348 2 ppdev,parport_pc, Live 0xffffffffa0379000
+i2c_piix4 22106 0 - Live 0xffffffffa02f7000
+shpchp 37032 0 - Live 0xffffffffa02b1000
+vmw_vmci 67106 0 - Live 0xffffffffa0254000
+knem 36922 0 - Live 0xffffffffa0244000 (OF)
+uinput 17625 0 - Live 0xffffffffa027e000
+xfs 915019 2 - Live 0xffffffffa0163000
+libcrc32c 12644 1 xfs, Live 0xffffffffa0157000
+sr_mod 22416 0 - Live 0xffffffffa015c000
+cdrom 42556 1 sr_mod, Live 0xffffffffa014b000
+ata_generic 12910 0 - Live 0xffffffffa00a9000
+pata_acpi 13038 0 - Live 0xffffffffa00a4000
+sd_mod 45499 3 - Live 0xffffffffa013e000
+crc_t10dif 12714 1 sd_mod, Live 0xffffffffa005c000
+crct10dif_common 12595 2 crct10dif_pclmul,crc_t10dif, Live 0xffffffffa0022000
+drm_kms_helper 98226 0 - Live 0xffffffffa0125000
+ata_piix 35038 0 - Live 0xffffffffa009a000
+ttm 93488 0 - Live 0xffffffffa010d000
+vmw_pvscsi 23114 2 - Live 0xffffffffa004a000
+drm 311588 2 drm_kms_helper,ttm, Live 0xffffffffa00bf000
+vmxnet3 49501 0 - Live 0xffffffffa00b1000
+libata 218854 3 ata_generic,pata_acpi,ata_piix, Live 0xffffffffa0063000
+i2c_core 40325 3 i2c_piix4,drm_kms_helper,drm, Live 0xffffffffa0051000
+floppy 69417 0 - Live 0xffffffffa0038000
+dm_mirror 22135 0 - Live 0xffffffffa002d000
+dm_region_hash 20862 1 dm_mirror, Live 0xffffffffa001b000
+dm_log 18411 2 dm_mirror,dm_region_hash, Live 0xffffffffa0027000
+dm_mod 104038 12 dm_mirror,dm_log, Live 0xffffffffa0000000

@@ -1,0 +1,27 @@
+Jul 23 16:30:28 localhost sshd[31134]: Accepted password for root from 10.166.14.26 port 60232 ssh2
+Jul 23 16:30:28 localhost sshd[31134]: pam_unix(sshd:session): session opened for user root by (uid=0)
+Jul 23 16:55:13 localhost sshd[32089]: Accepted password for root from 10.166.14.26 port 60554 ssh2
+Jul 23 16:55:13 localhost sshd[32089]: pam_unix(sshd:session): session opened for user root by (uid=0)
+Jul 24 03:25:53 localhost sshd[32089]: error: Received disconnect from 10.166.14.26: 0:
+Jul 24 03:25:53 localhost sshd[32089]: pam_unix(sshd:session): session closed for user root
+Jul 24 03:44:56 localhost sshd[31134]: error: Received disconnect from 10.166.14.26: 0:
+Jul 24 03:44:56 localhost sshd[31134]: pam_unix(sshd:session): session closed for user root
+Jul 24 17:04:32 localhost sshd[652]: Accepted password for root from 10.166.14.26 port 50810 ssh2
+Jul 24 17:04:32 localhost sshd[652]: pam_unix(sshd:session): session opened for user root by (uid=0)
+Jul 24 22:27:50 localhost sshd[17393]: Accepted password for root from 10.166.14.26 port 59384 ssh2
+Jul 24 22:27:50 localhost sshd[17393]: pam_unix(sshd:session): session opened for user root by (uid=0)
+Jul 24 22:28:24 localhost sshd[17393]: pam_unix(sshd:session): session closed for user root
+Jul 24 23:55:30 localhost sshd[22338]: Accepted password for root from 10.166.14.26 port 61645 ssh2
+Jul 24 23:55:30 localhost sshd[22338]: pam_unix(sshd:session): session opened for user root by (uid=0)
+Jul 24 23:55:43 localhost sshd[22338]: pam_unix(sshd:session): session closed for user root
+Jul 25 01:05:56 localhost sshd[652]: error: Received disconnect from 10.166.14.26: 0:
+Jul 25 01:05:56 localhost sshd[652]: pam_unix(sshd:session): session closed for user root
+Jul 25 01:06:08 localhost sshd[28594]: Accepted password for root from 10.166.14.26 port 63873 ssh2
+Jul 25 01:06:08 localhost sshd[28594]: pam_unix(sshd:session): session opened for user root by (uid=0)
+Jul 25 01:13:09 localhost sshd[28594]: error: Received disconnect from 10.166.14.26: 0:
+Jul 25 01:13:09 localhost sshd[28594]: pam_unix(sshd:session): session closed for user root
+Jul 25 16:40:31 localhost sshd[12872]: Accepted password for root from 10.166.14.26 port 64239 ssh2
+Jul 25 16:40:31 localhost sshd[12872]: pam_unix(sshd:session): session opened for user root by (uid=0)
+Jul 25 19:07:34 localhost sshd[20843]: Accepted password for root from 10.166.14.26 port 51657 ssh2
+Jul 25 19:07:34 localhost sshd[20843]: pam_unix(sshd:session): session opened for user root by (uid=0)
+Jul 25 19:08:08 localhost sshd[20843]: pam_unix(sshd:session): session closed for user root

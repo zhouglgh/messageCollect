@@ -1,0 +1,114 @@
+00000000-00000fff : reserved
+00001000-0009f7ff : System RAM
+0009f800-0009ffff : reserved
+000a0000-000bffff : PCI Bus 0000:00
+000c0000-000c7fff : Video ROM
+000ca000-000cbfff : reserved
+  000ca000-000cafff : Adapter ROM
+000cc000-000cffff : PCI Bus 0000:00
+000d0000-000d3fff : PCI Bus 0000:00
+000d4000-000d7fff : PCI Bus 0000:00
+000d8000-000dbfff : PCI Bus 0000:00
+000dc000-000fffff : reserved
+  000f0000-000fffff : System ROM
+00100000-bfedffff : System RAM
+  01000000-0161c38a : Kernel code
+  0161c38b-01a35d7f : Kernel data
+  01bd0000-01eecfff : Kernel bss
+  2b000000-351fffff : Crash kernel
+bfee0000-bfefefff : ACPI Tables
+bfeff000-bfefffff : ACPI Non-volatile Storage
+bff00000-bfffffff : System RAM
+c0000000-febfffff : PCI Bus 0000:00
+  c0000000-c0007fff : 0000:00:0f.0
+  d0000000-d0001fff : 0000:00:07.7
+  d0200000-d03fffff : pnp 00:0c
+  d0800000-d0ffffff : 0000:00:0f.0
+  d1900000-d23fffff : PCI Bus 0000:02
+  d2400000-d24fffff : PCI Bus 0000:03
+    d2400000-d2407fff : 0000:03:00.0
+      d2400000-d2407fff : vmw_pvscsi
+  d2500000-d25fffff : PCI Bus 0000:0b
+    d2500000-d2501fff : 0000:0b:00.0
+    d2503000-d2503fff : 0000:0b:00.0
+      d2503000-d2503fff : vmxnet3
+    d2504000-d2504fff : 0000:0b:00.0
+      d2504000-d2504fff : vmxnet3
+  d2600000-d26fffff : PCI Bus 0000:13
+  d2700000-d27fffff : PCI Bus 0000:1b
+  d2800000-d28fffff : PCI Bus 0000:04
+  d2900000-d29fffff : PCI Bus 0000:0c
+  d2a00000-d2afffff : PCI Bus 0000:14
+  d2b00000-d2bfffff : PCI Bus 0000:1c
+  d2c00000-d2cfffff : PCI Bus 0000:05
+  d2d00000-d2dfffff : PCI Bus 0000:0d
+  d2e00000-d2efffff : PCI Bus 0000:15
+  d2f00000-d2ffffff : PCI Bus 0000:1d
+  d3000000-d30fffff : PCI Bus 0000:06
+  d3100000-d31fffff : PCI Bus 0000:0e
+  d3200000-d32fffff : PCI Bus 0000:16
+  d3300000-d33fffff : PCI Bus 0000:1e
+  d3400000-d34fffff : PCI Bus 0000:07
+  d3500000-d35fffff : PCI Bus 0000:0f
+  d3600000-d36fffff : PCI Bus 0000:17
+  d3700000-d37fffff : PCI Bus 0000:1f
+  d3800000-d38fffff : PCI Bus 0000:08
+  d3900000-d39fffff : PCI Bus 0000:10
+  d3a00000-d3afffff : PCI Bus 0000:18
+  d3b00000-d3bfffff : PCI Bus 0000:20
+  d3c00000-d3cfffff : PCI Bus 0000:09
+  d3d00000-d3dfffff : PCI Bus 0000:11
+  d3e00000-d3efffff : PCI Bus 0000:19
+  d3f00000-d3ffffff : PCI Bus 0000:21
+  d4000000-d40fffff : PCI Bus 0000:0a
+  d4100000-d41fffff : PCI Bus 0000:12
+  d4200000-d42fffff : PCI Bus 0000:1a
+  d4300000-d43fffff : PCI Bus 0000:22
+  d4400000-d44fffff : PCI Bus 0000:03
+    d4400000-d440ffff : 0000:03:00.0
+  d4500000-d45fffff : PCI Bus 0000:0b
+    d4500000-d450ffff : 0000:0b:00.0
+  d4600000-d46fffff : PCI Bus 0000:13
+  d4700000-d47fffff : PCI Bus 0000:1b
+  d4800000-d48fffff : PCI Bus 0000:04
+  d4900000-d49fffff : PCI Bus 0000:0c
+  d4a00000-d4afffff : PCI Bus 0000:1c
+  d4b00000-d4bfffff : PCI Bus 0000:0d
+  d4c00000-d4cfffff : PCI Bus 0000:1d
+  d4d00000-d4dfffff : PCI Bus 0000:0e
+  d4e00000-d4efffff : PCI Bus 0000:1e
+  d4f00000-d4ffffff : PCI Bus 0000:0f
+  d5000000-d50fffff : PCI Bus 0000:1f
+  d5100000-d51fffff : PCI Bus 0000:10
+  d5200000-d52fffff : PCI Bus 0000:20
+  d5300000-d53fffff : PCI Bus 0000:11
+  d5400000-d54fffff : PCI Bus 0000:21
+  d5500000-d55fffff : PCI Bus 0000:12
+  d5600000-d56fffff : PCI Bus 0000:22
+  d8000000-dbffffff : 0000:00:0f.0
+  dc400000-dc9fffff : PCI Bus 0000:02
+  dca00000-dcafffff : PCI Bus 0000:14
+  dcb00000-dcbfffff : PCI Bus 0000:05
+  dcc00000-dccfffff : PCI Bus 0000:15
+  dcd00000-dcdfffff : PCI Bus 0000:06
+  dce00000-dcefffff : PCI Bus 0000:16
+  dcf00000-dcffffff : PCI Bus 0000:07
+  dd000000-dd0fffff : PCI Bus 0000:17
+  dd100000-dd1fffff : PCI Bus 0000:08
+  dd200000-dd2fffff : PCI Bus 0000:18
+  dd300000-dd3fffff : PCI Bus 0000:09
+  dd400000-dd4fffff : PCI Bus 0000:19
+  dd500000-dd5fffff : PCI Bus 0000:0a
+  dd600000-dd6fffff : PCI Bus 0000:1a
+  e0000000-efffffff : PCI MMCONFIG 0000 [bus 00-ff]
+    e0000000-efffffff : reserved
+      e0000000-efffffff : pnp 00:0c
+fec00000-fec0ffff : reserved
+  fec00000-fec003ff : IOAPIC 0
+fed00000-fed003ff : HPET 0
+  fed00000-fed003ff : pnp 00:07
+fee00000-fee00fff : Local APIC
+  fee00000-fee00fff : reserved
+fffe0000-ffffffff : reserved
+100000000-44effffff : System RAM
+44f000000-44fffffff : RAM buffer

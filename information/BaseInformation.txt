@@ -1,0 +1,376 @@
+cpu:
+lscpu
+{
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                4
+On-line CPU(s) list:   0-3
+Thread(s) per core:    1
+Core(s) per socket:    2
+Socket(s):             2
+NUMA node(s):          1
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 45
+Model name:            Intel(R) Xeon(R) CPU E5-2620 0 @ 2.00GHz
+Stepping:              7
+CPU MHz:               1995.192
+BogoMIPS:              3990.38
+Hypervisor vendor:     VMware
+Virtualization type:   full
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              256K
+L3 cache:              15360K
+NUMA node0 CPU(s):     0-3
+}
+memory:
+cat /proc/meminfo
+{
+MemTotal:       16509552 kB
+MemFree:        14325032 kB
+MemAvailable:   15626648 kB
+Buffers:            2328 kB
+Cached:          1404752 kB
+SwapCached:            0 kB
+Active:          1127692 kB
+Inactive:         591952 kB
+Active(anon):     325372 kB
+Inactive(anon):    20836 kB
+Active(file):     802320 kB
+Inactive(file):   571116 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       8388604 kB
+SwapFree:        8388604 kB
+Dirty:             82156 kB
+Writeback:             0 kB
+AnonPages:        312604 kB
+Mapped:            87060 kB
+Shmem:             33644 kB
+Slab:             244924 kB
+SReclaimable:     181596 kB
+SUnreclaim:        63328 kB
+KernelStack:        4528 kB
+PageTables:        13232 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    16643380 kB
+Committed_AS:    1448200 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:      295776 kB
+VmallocChunk:   34359430760 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:    120832 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      102272 kB
+DirectMap2M:    16920576 kB
+}
+nic:
+ifconfig
+{
+ens192: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.166.15.181  netmask 255.255.255.0  broadcast 10.166.15.255
+        inet6 fe80::20c:29ff:fec5:4f50  prefixlen 64  scopeid 0x20<link>
+        ether 00:0c:29:c5:4f:50  txqueuelen 1000  (Ethernet)
+        RX packets 21135393  bytes 1568972598 (1.4 GiB)
+        RX errors 0  dropped 242  overruns 0  frame 0
+        TX packets 204467  bytes 271974853 (259.3 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 0  (Local Loopback)
+        RX packets 1417  bytes 174379 (170.2 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1417  bytes 174379 (170.2 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255
+        ether 52:54:00:21:6a:e2  txqueuelen 0  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+}
+lspci |grep net
+{
+0b:00.0 Ethernet controller: VMware VMXNET3 Ethernet Controller (rev 01)
+}
+bios:
+dmidecode -t bios
+{
+# dmidecode 2.12
+SMBIOS 2.4 present.
+
+Handle 0x0000, DMI type 0, 24 bytes
+BIOS Information
+	Vendor: Phoenix Technologies LTD
+	Version: 6.00
+	Release Date: 06/22/2012
+	Address: 0xEA0C0
+	Runtime Size: 89920 bytes
+	ROM Size: 64 kB
+	Characteristics:
+		ISA is supported
+		PCI is supported
+		PC Card (PCMCIA) is supported
+		PNP is supported
+		APM is supported
+		BIOS is upgradeable
+		BIOS shadowing is allowed
+		ESCD support is available
+		Boot from CD is supported
+		Selectable boot is supported
+		EDD is supported
+		Print screen service is supported (int 5h)
+		8042 keyboard services are supported (int 9h)
+		Serial services are supported (int 14h)
+		Printer services are supported (int 17h)
+		CGA/mono video services are supported (int 10h)
+		ACPI is supported
+		Smart battery is supported
+		BIOS boot specification is supported
+		Function key-initiated network boot is supported
+		Targeted content distribution is supported
+	BIOS Revision: 4.6
+	Firmware Revision: 0.0
+
+}
+disk:
+lsblk
+{
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda           8:0    0   200G  0 disk 
+├─sda1        8:1    0   500M  0 part /boot
+└─sda2        8:2    0 199.5G  0 part 
+  ├─ik-root 253:0    0    50G  0 lvm  /
+  ├─ik-swap 253:1    0     8G  0 lvm  [SWAP]
+  └─ik-home 253:2    0 141.5G  0 lvm  /home
+sr0          11:0    1   4.1G  0 rom  
+}
+lsscsi
+{
+[0:0:0:0]    disk    VMware   Virtual disk     1.0   /dev/sda 
+[2:0:0:0]    cd/dvd  NECVMWar VMware IDE CDR10 1.00  /dev/sr0 
+}
+df -h
+{
+Filesystem           Size  Used Avail Use% Mounted on
+/dev/mapper/ik-root   50G  7.6G   43G  16% /
+devtmpfs             7.9G     0  7.9G   0% /dev
+tmpfs                7.9G   80K  7.9G   1% /dev/shm
+tmpfs                7.9G   33M  7.9G   1% /run
+tmpfs                7.9G     0  7.9G   0% /sys/fs/cgroup
+/dev/mapper/ik-home  142G  768M  141G   1% /home
+/dev/sda1            477M  104M  344M  24% /boot
+}
+mount
+{
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime,seclabel)
+devtmpfs on /dev type devtmpfs (rw,nosuid,seclabel,size=8244784k,nr_inodes=2061196,mode=755)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev,seclabel)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,seclabel,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,seclabel,mode=755)
+tmpfs on /sys/fs/cgroup type tmpfs (rw,nosuid,nodev,noexec,seclabel,mode=755)
+cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/usr/lib/systemd/systemd-cgroups-agent,name=systemd)
+pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpuacct,cpu)
+cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)
+cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)
+cgroup on /sys/fs/cgroup/net_cls type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls)
+cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)
+cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,perf_event)
+cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,hugetlb)
+configfs on /sys/kernel/config type configfs (rw,relatime)
+/dev/mapper/ik-root on / type xfs (rw,relatime,seclabel,attr2,inode64,noquota)
+selinuxfs on /sys/fs/selinux type selinuxfs (rw,relatime)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=32,pgrp=1,timeout=300,minproto=5,maxproto=5,direct)
+debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,seclabel)
+mqueue on /dev/mqueue type mqueue (rw,relatime,seclabel)
+/dev/mapper/ik-home on /home type xfs (rw,relatime,seclabel,attr2,inode64,noquota)
+/dev/sda1 on /boot type ext4 (rw,relatime,seclabel,data=ordered)
+binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,relatime)
+}
+modle:
+lsmod
+{
+Module                  Size  Used by
+binfmt_misc            17468  1 
+xt_CHECKSUM            12549  1 
+ipt_MASQUERADE         12678  3 
+nf_nat_masquerade_ipv4    13412  1 ipt_MASQUERADE
+tun                    27183  1 
+ip6t_rpfilter          12546  1 
+ip6t_REJECT            12939  2 
+ipt_REJECT             12541  4 
+xt_conntrack           12760  10 
+rdma_ucm               26797  0 
+ib_ucm                 22546  0 
+rdma_cm                49851  1 rdma_ucm
+iw_cm                  36940  1 rdma_cm
+ebtable_nat            12807  0 
+ebtable_broute         12731  0 
+bridge                115385  1 ebtable_broute
+stp                    12976  1 bridge
+llc                    14552  2 stp,bridge
+ebtable_filter         12827  0 
+ebtables               30913  3 ebtable_broute,ebtable_nat,ebtable_filter
+ib_ipoib              136865  0 
+ib_cm                  47035  3 rdma_cm,ib_ucm,ib_ipoib
+xfs_ck                 12923  0 
+ip6table_nat           12864  1 
+nf_conntrack_ipv6      18738  6 
+nf_defrag_ipv6         34651  1 nf_conntrack_ipv6
+nf_nat_ipv6            14131  1 ip6table_nat
+ip6table_mangle        12700  1 
+ip6table_security      12710  1 
+ip6table_raw           12683  1 
+kfm_net                12723  0 
+ip6table_filter        12815  1 
+ib_uverbs              75038  2 ib_ucm,rdma_ucm
+ip6_tables             27025  5 ip6table_filter,ip6table_mangle,ip6table_security,ip6table_nat,ip6table_raw
+kpatch_kfm_net         27670  1 
+ib_umad                22330  0 
+iptable_nat            12875  1 
+nf_conntrack_ipv4      14862  6 
+nf_defrag_ipv4         12729  1 nf_conntrack_ipv4
+nf_nat_ipv4            14115  1 iptable_nat
+nf_nat                 26146  3 nf_nat_ipv4,nf_nat_ipv6,nf_nat_masquerade_ipv4
+nf_conntrack          105702  7 nf_nat,nf_nat_ipv4,nf_nat_ipv6,xt_conntrack,nf_nat_masquerade_ipv4,nf_conntrack_ipv4,nf_conntrack_ipv6
+iptable_mangle         12695  1 
+iptable_security       12705  1 
+iptable_raw            12678  1 
+kfm_md                 12674  0 
+iptable_filter         12810  1 
+ip_tables              27239  5 iptable_security,iptable_filter,iptable_mangle,iptable_nat,iptable_raw
+mlx5_ib               195825  0 
+kpatch_kfm_md          30982  1 
+mlx5_core             379427  1 mlx5_ib
+mlx4_en               132558  0 
+vxlan                  37409  2 mlx4_en,mlx5_core
+ip_tunnel              23760  1 vxlan
+ptp                    18933  2 mlx4_en,mlx5_core
+pps_core               19106  1 ptp
+mlx4_ib               195768  0 
+ib_sa                  33950  5 rdma_cm,ib_cm,mlx4_ib,rdma_ucm,ib_ipoib
+ib_mad                 55975  4 ib_cm,ib_sa,mlx4_ib,ib_umad
+kfm_deadlock           12686  0 
+ib_core               141096  12 rdma_cm,ib_cm,ib_sa,iw_cm,mlx4_ib,mlx5_ib,ib_mad,ib_ucm,ib_umad,ib_uverbs,rdma_ucm,ib_ipoib
+ib_addr                18923  3 rdma_cm,ib_core,rdma_ucm
+kpatch_spinlock        14365  1 
+mlx4_core             348954  2 mlx4_en,mlx4_ib
+mlx_compat             16639  17 rdma_cm,ib_cm,ib_sa,iw_cm,mlx4_en,mlx4_ib,mlx5_ib,ib_mad,ib_ucm,ib_addr,ib_core,ib_umad,ib_uverbs,mlx4_core,mlx5_core,rdma_ucm,ib_ipoib
+kfm_mem                12736  0 
+kfm_cpu                13212  0 
+kfm_apei               12682  0 
+kpatch_kfm_apei        18461  1 
+kfm_pcie               12682  0 
+kpatch_kfm_pcie        14505  1 
+kfm                    15189  15 kfm_cpu,kfm_mem,kfm_net,kfm_md,kfm_deadlock,kfm_apei,kfm_pcie
+kpatch                 52075  5 kpatch_kfm_apei,kpatch_kfm_pcie,kpatch_spinlock,kpatch_kfm_net,kpatch_kfm_md
+coretemp               13435  0 
+ext4                  562391  1 
+mbcache                14958  1 ext4
+jbd2                  102940  1 ext4
+crct10dif_pclmul       14289  0 
+crc32_pclmul           13113  0 
+crc32c_intel           22079  0 
+ghash_clmulni_intel    13259  0 
+aesni_intel            52846  0 
+ppdev                  17671  0 
+lrw                    13286  1 aesni_intel
+gf128mul               14951  1 lrw
+glue_helper            13990  1 aesni_intel
+ablk_helper            13597  1 aesni_intel
+cryptd                 20359  3 ghash_clmulni_intel,aesni_intel,ablk_helper
+vmw_balloon            13415  0 
+pcspkr                 12718  0 
+serio_raw              13462  0 
+parport_pc             28165  0 
+parport                42348  2 ppdev,parport_pc
+i2c_piix4              22106  0 
+shpchp                 37032  0 
+vmw_vmci               67106  0 
+knem                   36922  0 
+uinput                 17625  0 
+xfs                   915019  2 
+libcrc32c              12644  1 xfs
+sr_mod                 22416  0 
+cdrom                  42556  1 sr_mod
+ata_generic            12910  0 
+pata_acpi              13038  0 
+sd_mod                 45499  3 
+crc_t10dif             12714  1 sd_mod
+crct10dif_common       12595  2 crct10dif_pclmul,crc_t10dif
+drm_kms_helper         98226  0 
+ata_piix               35038  0 
+ttm                    93488  0 
+vmw_pvscsi             23114  2 
+drm                   311588  2 ttm,drm_kms_helper
+vmxnet3                49501  0 
+libata                218854  3 pata_acpi,ata_generic,ata_piix
+i2c_core               40325  3 drm,i2c_piix4,drm_kms_helper
+floppy                 69417  0 
+dm_mirror              22135  0 
+dm_region_hash         20862  1 dm_mirror
+dm_log                 18411  2 dm_region_hash,dm_mirror
+dm_mod                104038  12 dm_log,dm_mirror
+}
+system:
+hostname
+{
+localhost.localdomain
+}
+dmidecode -t baseboard|grep 'Base Board Information' -A12
+{
+Base Board Information
+	Manufacturer: Intel Corporation
+	Product Name: 440BX Desktop Reference Platform
+	Version: None
+	Serial Number: None
+	Asset Tag: Not Specified
+	Features: None
+	Location In Chassis: Not Specified
+	Chassis Handle: 0x0000
+	Type: Unknown
+	Contained Object Handles: 0
+
+Handle 0x00DF, DMI type 10, 8 bytes
+}
+cat /proc/sys/kernel/osrelease
+{
+3.10.0-229.kux.x86_64
+}
+if [ -f /etc/os-release ];then cat /etc/os-release;fi
+{
+NAME="Inspur K-UX"
+VERSION="3 (Inspur)"
+ID="k-ux"
+VERSION_ID="3"
+PRETTY_NAME="Inspur K-UX 3 (Inspur)"
+ANSI_COLOR="0;31"
+CPE_NAME="cpe:/o:k-ux:k-ux:3"
+HOME_URL="http://www.inspur.com/"
+
+KUX_MANTISBT_PROJECT="K-UX-3"
+KUX_MANTISBT_PROJECT_VERSION="3"
+KUX_SUPPORT_PRODUCT="K-UX"
+KUX_SUPPORT_PRODUCT_VERSION="3"
+
+}
+raid:

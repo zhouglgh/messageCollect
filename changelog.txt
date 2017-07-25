@@ -1,3 +1,5 @@
-changed at  2017-06-20 by Guolang Zhou:
-	
-
+m machine_types.py
+m main.py
+m get_info_from_linux.py
+a package_python/
+m mc_inital.py

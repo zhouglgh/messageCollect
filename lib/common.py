@@ -37,7 +37,7 @@ class common_process(object):
 		resstr  = cmd_res[1]
 		reserr  = cmd_res[2]
 		if resstr:
-			write_content = cmd_str+ '\n{\n' + resstr + '\n}\n'
+			write_content = cmd_str+ '\n{\n' + resstr + '}\n'
 			#file opened in mode 'mode'
 			mode = ''
 			if(appended == 0):

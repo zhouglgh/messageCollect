@@ -1,0 +1,4 @@
+ls -l /sys/block/sd*
+{
+lrwxrwxrwx. 1 root root 0 Jul 26  2007 /sys/block/sda -> ../devices/pci0000:00/0000:00:15.0/0000:03:00.0/host0/target0:0:0/0:0:0:0/block/sda
+}

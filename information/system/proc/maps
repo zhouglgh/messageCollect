@@ -1,0 +1,50 @@
+00400000-00423000 r-xp 00000000 fd:00 135919225                          /usr/bin/cp
+00622000-00623000 r--p 00022000 fd:00 135919225                          /usr/bin/cp
+00623000-00624000 rw-p 00023000 fd:00 135919225                          /usr/bin/cp
+00624000-00625000 rw-p 00000000 00:00 0 
+015de000-015ff000 rw-p 00000000 00:00 0                                  [heap]
+7f34e4323000-7f34ea84a000 r--p 00000000 fd:00 134330076                  /usr/lib/locale/locale-archive
+7f34ea84a000-7f34ea860000 r-xp 00000000 fd:00 201334815                  /usr/lib64/libpthread-2.17.so
+7f34ea860000-7f34eaa60000 ---p 00016000 fd:00 201334815                  /usr/lib64/libpthread-2.17.so
+7f34eaa60000-7f34eaa61000 r--p 00016000 fd:00 201334815                  /usr/lib64/libpthread-2.17.so
+7f34eaa61000-7f34eaa62000 rw-p 00017000 fd:00 201334815                  /usr/lib64/libpthread-2.17.so
+7f34eaa62000-7f34eaa66000 rw-p 00000000 00:00 0 
+7f34eaa66000-7f34eaa69000 r-xp 00000000 fd:00 201334795                  /usr/lib64/libdl-2.17.so
+7f34eaa69000-7f34eac68000 ---p 00003000 fd:00 201334795                  /usr/lib64/libdl-2.17.so
+7f34eac68000-7f34eac69000 r--p 00002000 fd:00 201334795                  /usr/lib64/libdl-2.17.so
+7f34eac69000-7f34eac6a000 rw-p 00003000 fd:00 201334795                  /usr/lib64/libdl-2.17.so
+7f34eac6a000-7f34eac8e000 r-xp 00000000 fd:00 201348648                  /usr/lib64/liblzma.so.5.0.99
+7f34eac8e000-7f34eae8d000 ---p 00024000 fd:00 201348648                  /usr/lib64/liblzma.so.5.0.99
+7f34eae8d000-7f34eae8e000 r--p 00023000 fd:00 201348648                  /usr/lib64/liblzma.so.5.0.99
+7f34eae8e000-7f34eae8f000 rw-p 00024000 fd:00 201348648                  /usr/lib64/liblzma.so.5.0.99
+7f34eae8f000-7f34eaeee000 r-xp 00000000 fd:00 201348650                  /usr/lib64/libpcre.so.1.2.0
+7f34eaeee000-7f34eb0ee000 ---p 0005f000 fd:00 201348650                  /usr/lib64/libpcre.so.1.2.0
+7f34eb0ee000-7f34eb0ef000 r--p 0005f000 fd:00 201348650                  /usr/lib64/libpcre.so.1.2.0
+7f34eb0ef000-7f34eb0f0000 rw-p 00060000 fd:00 201348650                  /usr/lib64/libpcre.so.1.2.0
+7f34eb0f0000-7f34eb2a6000 r-xp 00000000 fd:00 201334789                  /usr/lib64/libc-2.17.so
+7f34eb2a6000-7f34eb4a6000 ---p 001b6000 fd:00 201334789                  /usr/lib64/libc-2.17.so
+7f34eb4a6000-7f34eb4aa000 r--p 001b6000 fd:00 201334789                  /usr/lib64/libc-2.17.so
+7f34eb4aa000-7f34eb4ac000 rw-p 001ba000 fd:00 201334789                  /usr/lib64/libc-2.17.so
+7f34eb4ac000-7f34eb4b1000 rw-p 00000000 00:00 0 
+7f34eb4b1000-7f34eb4b5000 r-xp 00000000 fd:00 201404257                  /usr/lib64/libattr.so.1.1.0
+7f34eb4b5000-7f34eb6b4000 ---p 00004000 fd:00 201404257                  /usr/lib64/libattr.so.1.1.0
+7f34eb6b4000-7f34eb6b5000 r--p 00003000 fd:00 201404257                  /usr/lib64/libattr.so.1.1.0
+7f34eb6b5000-7f34eb6b6000 rw-p 00004000 fd:00 201404257                  /usr/lib64/libattr.so.1.1.0
+7f34eb6b6000-7f34eb6bd000 r-xp 00000000 fd:00 201404269                  /usr/lib64/libacl.so.1.1.0
+7f34eb6bd000-7f34eb8bd000 ---p 00007000 fd:00 201404269                  /usr/lib64/libacl.so.1.1.0
+7f34eb8bd000-7f34eb8be000 r--p 00007000 fd:00 201404269                  /usr/lib64/libacl.so.1.1.0
+7f34eb8be000-7f34eb8bf000 rw-p 00008000 fd:00 201404269                  /usr/lib64/libacl.so.1.1.0
+7f34eb8bf000-7f34eb8e0000 r-xp 00000000 fd:00 201348660                  /usr/lib64/libselinux.so.1
+7f34eb8e0000-7f34ebae0000 ---p 00021000 fd:00 201348660                  /usr/lib64/libselinux.so.1
+7f34ebae0000-7f34ebae1000 r--p 00021000 fd:00 201348660                  /usr/lib64/libselinux.so.1
+7f34ebae1000-7f34ebae2000 rw-p 00022000 fd:00 201348660                  /usr/lib64/libselinux.so.1
+7f34ebae2000-7f34ebae4000 rw-p 00000000 00:00 0 
+7f34ebae4000-7f34ebb05000 r-xp 00000000 fd:00 201334782                  /usr/lib64/ld-2.17.so
+7f34ebcd5000-7f34ebcdb000 rw-p 00000000 00:00 0 
+7f34ebd04000-7f34ebd05000 rw-p 00000000 00:00 0 
+7f34ebd05000-7f34ebd06000 r--p 00021000 fd:00 201334782                  /usr/lib64/ld-2.17.so
+7f34ebd06000-7f34ebd07000 rw-p 00022000 fd:00 201334782                  /usr/lib64/ld-2.17.so
+7f34ebd07000-7f34ebd08000 rw-p 00000000 00:00 0 
+7fffd0014000-7fffd0035000 rw-p 00000000 00:00 0                          [stack]
+7fffd0110000-7fffd0112000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]

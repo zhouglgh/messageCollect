@@ -12,18 +12,15 @@ class ConfInfo(object):
 		self.logger = logger
 	def get_level(self):
 		return self.conp.get('level','mes_lev')
-	def get_hardware_info(self):
-		return self.conp.items('hardware')
-	def get_hardware_ifhave_info(self):
-		return self.conp.items('hardware_ifhave')
-	def get_OS_info(self):
-		return self.conp.items('operating')
-	def get_software_info(self):
-		return self.conp.items('application')
 	def get_file_baseinfo(self):
 		return self.conp.get('file_base','name')
 	def get_items(self):
 		return self.conp.items('items')
+	def get_bmc(self):
+		host = self.conp.get('bmc','host')
+		username = self.conp.get('bmc','username')
+		password = self.conp.get('bmc','password')
+		return [host,username,password]
 		
 if __name__ == '__main__':
 	print 'This is ConfigParser.'

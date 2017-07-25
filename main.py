@@ -27,13 +27,15 @@ mclog = mc_logger(FILE_LOG).logger
 
 
 #get the machine type
-machine = machp.extract_info()
+machine = machp.extract_info(mclog)
 OS_TYPE = machine.get_system()
-OS_ARC= machine.get_architecher()
+OS_ARC  = machine.get_architecher()
+PRODUCT_NAME= machine.get_ProductName()
 mclog.info("os type is %s"%OS_TYPE)
 
 #get the configuration
 conf    = ConfInfo(FILE_CONF,mclog)
+print conf.get_bmc()
 mclog.info("read config file from %s"%FILE_CONF)
 
 # if linux do relevant things
@@ -50,7 +52,10 @@ def do_linux():
 	#set file for base_info
 	file4baseinfo = conf.get_file_baseinfo()
 	items_info    = conf.get_items()
+	bmc_info      = conf.get_bmc()
 	linux_exe.set_filename_4baseinfo(file4baseinfo)
+	linux_exe.set_ProductName(PRODUCT_NAME)
+	linux_exe.set_bmc(bmc_info)
 	linux_exe.set_items(items_info)
 	#needed in the future
 	#level = conf.get_level()

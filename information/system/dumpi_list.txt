@@ -1,0 +1,4 @@
+du -ah /var/crash
+{
+0	/var/crash
+}

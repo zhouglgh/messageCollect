@@ -1,0 +1,1 @@
+BOOT_IMAGE=/vmlinuz-3.10.0-229.kux.x86_64 root=/dev/mapper/ik-root ro rd.lvm.lv=ik/root nomodeset rd.lvm.lv=ik/swap crashkernel=auto rhgb quiet LANG=en_US.UTF-8

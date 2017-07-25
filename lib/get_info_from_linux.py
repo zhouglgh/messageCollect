@@ -4,21 +4,24 @@ modified by zhougl, at 2017-07-05
 '''
 import os
 import common
+import paramiko
 
 
 class linux_process(object):
 	def __init__(self,logger,dir_tools,os_arc):
 		#log configuration
-		self.logger = logger
+		self.logger  = logger
 		#This is for linux
-		self.os_arc    = os_arc
+		self.os_arc  = os_arc
 		self.cmds    =   {}
 		self.file4baseinfo=''
 		#The directory to save log in
-		self.dir_info = ''
-		self.items    = []
-		self.dir_tools=dir_tools
-		self.common_exe = common.common_process(logger)
+		self.dir_info     = ''
+		self.ProductName  = ''
+		self.bmc          = ''
+		self.items        = []
+		self.dir_tools    = dir_tools
+		self.common_exe   = common.common_process(logger)
 		self.do = {
 			"cpu"   :self.do_cpu,
 			"mem"   :self.do_mem,
@@ -34,6 +37,12 @@ class linux_process(object):
 			#"config":self.do_config,
 			#"fs"    :self.do_fs
 		}
+	#set ProductName
+	def set_ProductName(self,name):
+		self.ProductName = name
+	#set BMC
+	def set_bmc(self,bmc):
+		self.bmc =  bmc
 	#set filename saving base information
 	def set_filename_4baseinfo(self,filename):
 		self.file4baseinfo = filename
@@ -77,6 +86,20 @@ class linux_process(object):
 	def do_cpu(self,need_all):
 		self.logger.info("catch cpu info...")
 		self.do_normal('cpu',need_all)
+		if 'k1-910' == self.ProductName.lower():
+			if self.bmc:
+				res = self.do_register(self.bmc[0],self.bmc[1],self.bmc[2])
+	def do_register(self,hostname,user,password):
+		client = paramiko.SSHClient()
+		client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+		client.connect(hostname=hostname,username=user,password=password)
+		res = client.exec_command("k2_csr_access cpu read 0 0x1380")[1].read()
+		filename = 'cpu_register.txt'
+		filepath = self.dir_info + '/' + filename
+		self.common_exe.save_results_formate(filepath,0,['k2_csr_access',res,''])
+		file_all_cpu = self.dir_info + '/cpu_all_csr.txt'
+		res = client.exec_command("dump_cpu_csr 1> %s"%file_all_cpu)
+		client.close()
 	#get information for the type:mem.
 	def do_mem(self,need_all):
 		self.logger.info("catch memory info...")
@@ -110,11 +133,12 @@ class linux_process(object):
 		self._do_dict(dir_bmc,items)
 		if self.os_arc == 'x86_64':
 			tool_path = self.dir_tools + '/' + cmds_bmc['tool_x64']
-		elif os_arc == 'x86':
+		elif self.os_arc == 'x86':
 			tool_path = self.dir_tools + '/' + cmds_bmc['tool']
 		else:
-			self.logger.error("Do not support the cpu architecher.")
-			exit()
+			self.logger.warning("Do not support the cpu architecher.")
+			self.logger.warning("So can not get the bmc info.")
+			return 'error'
 		command = tool_path + ' ' + cmds_bmc['tool_cmd']
 		filename = cmds_bmc['tool_file']
 		file_path = dir_bmc + '/' + filename
