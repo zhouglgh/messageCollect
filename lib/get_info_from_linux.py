@@ -123,7 +123,119 @@ class linux_process(object):
 	#get information for the type:raid.
 	def do_raid(self,need_all):
 		self.logger.info("catch raid info...")
-		self.do_normal('raid',need_all)
+		mycmds =self.cmds['raid']
+		mybaseinfo = mycmds.pop('baseinfo')
+		self._do_baseinfo(mybaseinfo)
+		types_raid  = mycmds.pop('type')
+		tool_megacli = mycmds.pop('tool_megacli')
+		if self.os_arc.find('64') != -1:
+			tool_megacli = self.dir_tools + '/' + tool_megacli["64"]
+		else:
+			tool_megacli = self.dir_tools + '/' + tool_megacli["32"]
+		cmd_get_raidtype = "lspci |grep -i raid"	
+		type_raid        = self.common_exe.process_and_return(cmd_get_raidtype)
+		type_ofraid      = ''
+		if type_raid[0]:
+			for t in types_raid:
+				if type_raid[0].find(t) != -1:
+					type_ofraid = t
+					break
+		elif type_raid[1]:
+			self.logger.warning("Can not get the type of raid")
+			return
+		else:
+			self.logger.warning("There is no raid or no 'lspci'")
+			return
+		if not type_ofraid:
+			return
+		str_to_func = {
+			"3108":self.do_raid_3108,
+			"2208":self.do_raid_3108,
+			"2308":self.do_raid_2308,
+			#"3008":self.do_raid_3008,
+			"Adaptec" :self.do_raid_adaptec,
+		}
+		cmd_string = mycmds[type_ofraid]
+		dir_raid = self.common_exe.check_dir(self.dir_info,'raid%s'%(type_ofraid))
+		str_to_func[type_ofraid](dir_raid,cmd_string,tool_megacli)
+		
+	#get raid info for 3108
+	def do_raid_3108(self,dir_raid,cmd_string,tool_megacli):
+		if self.os_arc.find('64') != -1:
+			tool_3108 = cmd_string['tool']['64']
+		else:
+			tool_3108 = cmd_string['tool']['32']
+		tool_3108 = self.dir_tools + '/' + tool_3108
+		commands = cmd_string['cmds']
+		for cmd2file in commands['tool_3108']:
+			command = tool_3108 + ' ' + cmd2file[1]
+			filename=cmd2file[0]
+			file_path = dir_raid + '/' + filename
+			self._do_cmd_to_file(command,file_path)
+		for cmd2file in commands['tool_megacli']:
+			command = tool_megacli + ' ' + cmd2file[1]
+			filename=cmd2file[0]
+			file_path = dir_raid + '/' + filename
+			self._do_cmd_to_file(command,file_path)
+
+	#get raid info for 2308
+	def do_raid_2308(self,dir_raid,cmd_string,tool_megacli):
+		tool_ircu =  cmd_string['tool']['sas2ircu']
+		tool_ircu = self.dir_tools + '/' + tool_ircu
+		tool_flash=  cmd_string['tool']['sas2flash']
+		tool_flash= self.dir_tools + '/' + tool_flash
+		commands  = cmd_string['cmds']
+		commands_prepare = commands['prepare']
+		commands_doing   = commands['doing']
+		commands_after   = commands['after']
+		#prepare	
+		tool_prepare = commands_prepare['tool']
+		tool_prepare = dir_raid + '/' + tool_prepare
+		param_prepare= commands_prepare['param']
+		command_prepare=tool_prepare + ' ' + param_prepare
+		times        = self.common_exe.process_and_retrun(command_prepare)
+		#doing
+		cmds_doing = commands_doing['cmds']
+		filename   = cmds_doing.items()[0][0]
+		file_path  = dir_raid + '/' + filename
+		cmds_notreal= cmds_doing[filname]
+		cmds_real = []
+		i=0
+		times = int(times)
+		append = -1
+		while i < times:
+			for cmd_notreal in cmds_notreal:
+				cmd_real.append(cmd_notreal%i)
+			append+=1
+			cmd_and_para = tool_ircu + ' ' + cmd_real[0]
+			self.common_exe._do_cmd_to_file(cmd_and_para,filepath,append)
+			append+=1
+			cmd_and_para = tool_flash + ' ' + cmd_real[1]
+			self.common_exe._do_cmd_to_file(cmd_and_para,filepath,append)
+			cmd_and_para = tool_ircu + ' ' + cmd_real[2]
+			self.common_exe._do_cmd_to_file(cmd_and_para,filepath,append)
+			cmd_and_para = tool_flash + ' ' + cmd_real[3]
+			self.common_exe._do_cmd_to_file(cmd_and_para,filepath,append)
+			
+		
+	#get raid info for adaptec
+	def do_raid_adaptec(self,dir_raid,cmd_string,tool_megacli):
+		if self.os_arc.find('64') != -1:
+			tool_adaptec = cmd_string['tool']['64']
+		else:
+			tool_adaptec = cmd_string['tool']['32']
+		tool_adaptec = self.dir_tools + '/' + tool_adaptec
+		cmds = cmd_string['cmds']
+		command = tool_adaptec + ' ' + cmds['param']
+		res = self.common_exe.process_and_return(command)
+		if res[0].find("successfully") == -1:
+			self.logger.warning("Please check the command if it is suiltable!")
+			return
+		command = cmds['cmd']
+		command = command%dir_raid
+		res = self.common_exe.process_and_return(command)
+		if not res[0] and not res[1]:
+			self.logger.info("raid info collect successfully")
 	#get information for the type:bmc.
 	def do_bmc(self,need_all):
 		self.logger.info("catch bmc info...")

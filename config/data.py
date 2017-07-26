@@ -95,7 +95,84 @@ CMDFILE={
         },
 	 "raid" :
 		{
-			"baseinfo":{"raid":["lspci -v |grep RAID -A1"]}		
+			"baseinfo":{"raid":["lspci -v |grep RAID -A1"]},
+			"type"    :["3108","2208","2308","3008","Adaptec"],
+			"tool_megacli":{
+				"32":"RAIDtool/MegaCli/MegaCli",
+				"64":"RAIDtool/MegaCli/MegaCli64",
+			},
+			"3108":{
+				"tool"  :{
+					"32":"RAIDtool/3108/MegaRAID/storcli/storcli",
+					"64":"RAIDtool/3108/MegaRAID/storcli/storcli64",
+				},
+				"cmds"  :{
+					"tool_3108":{
+						"storcliAdpAllInfo.txt":"-AdpAllInfo -aALL",
+						"storcliPDList.txt":"-PDList -aALL",
+						"storcliVallShowAll.txt":"/call/vall show all",
+						"storcliAdpalilog.txt":"-adpalilog -aALL",
+						"storcliAdpbbucmd.txt":"-adpbbucmd -aALL",
+						"storcliPallShowAll.txt":"/call/pall show all",
+					},
+					"tool_megacli":{
+						"MegaCliLDInfo.txt":"-LDInfo -Lall -aALL",
+					},
+				},
+			},
+			"2208":"3108",
+			"2308":{
+				"tool":{
+					"sas2ircu":"RAIDtool/2308/sas2ircu",
+					"sas2flash":"RAIDtool/2308/sas2flash",
+				},
+				"cmds":{
+					"prepare":{
+						"tool":"RAIDtool/2308/sas2ircu",
+						"param":"LIST | grep '^ *[0-9]' | awk '{print $4}' | grep '87h\|86h' | wc -l",
+					},
+					"doing":{
+						"times":"",
+						"cmds":{
+							"sashbalog.txt":["%s display", "-c %s -list", "%s status", "%s logir upload"]
+						}
+					},
+					"after":{
+						"cmd":"a=logir.log;if [ -f $a ];then rm -rf $a"
+					},
+				},
+			},
+			"3008":{
+				"tool":{
+					"sas3ircu":"RAIDtool/3008/sas3ircu",
+					"sas3flash":"RAIDtool/3008/sas3flash",
+				},
+				"cmds":{
+					"prepare":{
+						"tool":"RAIDtool/3008/sas3ircu",
+						"param":"LIST | grep 'SAS3008' | grep -v 'Adapter' | wc -l",
+					},
+					"doing":{
+						"times":"",
+						"cmds":{
+							"sashbalog.txt":["%s display", "-c %s -list", "%s status", "%s logir upload"]
+						}
+					},
+					"after":{
+						"cmd":"a=logir.log;if [ -f $a ];then rm -rf $a"
+					},
+				},
+			},
+			"Adaptec":{
+				"tool":{
+					"32":"RAIDtool/Arcconf-Linux/arcconf-x86",
+					"64":"RAIDtool/Arcconf-Linux/arcconf-x64",
+				},
+				"cmds":{
+					"param":"savesupportarchive",
+					"cmd":"if [ -e /var/log/Support ];then cp -r /var/log/Support %s;fi",
+				}
+			}
 		},
 	 "system" :		
 		{
