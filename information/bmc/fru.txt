@@ -1,4 +1,0 @@
-ipmitool fru list
-{
-FRU Device Description : Builtin FRU Device (ID 0)
-}

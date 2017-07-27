@@ -5,12 +5,14 @@ modified by zhougl, at 2017-07-05
 import os
 import common
 import paramiko
+from enviroment import EnvSetting
 
 
 class linux_process(object):
-	def __init__(self,logger,dir_tools,os_arc):
+	def __init__(self,logger,dir_tools,os_arc,env_set):
 		#log configuration
 		self.logger  = logger
+		self.envset  = env_set
 		#This is for linux
 		self.os_arc  = os_arc
 		self.cmds    =   {}
@@ -22,6 +24,7 @@ class linux_process(object):
 		self.items        = []
 		self.dir_tools    = dir_tools
 		self.common_exe   = common.common_process(logger)
+		#install the needed packages and change the mode of executable file
 		self.do = {
 			"cpu"   :self.do_cpu,
 			"mem"   :self.do_mem,
@@ -90,6 +93,10 @@ class linux_process(object):
 			if self.bmc:
 				res = self.do_register(self.bmc[0],self.bmc[1],self.bmc[2])
 	def do_register(self,hostname,user,password):
+		res = self.envset.do_test_paramiko()
+		if res != 3:
+			self.logger.warning("Installing package 'paramiko' error, can not get the cpu register information!")
+			return -1
 		client = paramiko.SSHClient()
 		client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 		client.connect(hostname=hostname,username=user,password=password)
@@ -157,6 +164,7 @@ class linux_process(object):
 		}
 		cmd_string = mycmds[type_ofraid]
 		dir_raid = self.common_exe.check_dir(self.dir_info,'raid%s'%(type_ofraid))
+		self.envset.do_chmod_x(dir_raid)
 		str_to_func[type_ofraid](dir_raid,cmd_string,tool_megacli)
 		
 	#get raid info for 3108

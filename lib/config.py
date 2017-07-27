@@ -21,6 +21,12 @@ class ConfInfo(object):
 		username = self.conp.get('bmc','username')
 		password = self.conp.get('bmc','password')
 		return [host,username,password]
-		
+	def get_packages(self):
+		pags = self.conp.items('packages')
+		return {
+			pags[0][0] : pags[0][1],
+			pags[1][0] : pags[1][1],
+			pags[2][0] : pags[2][1],
+		}
 if __name__ == '__main__':
 	print 'This is ConfigParser.'

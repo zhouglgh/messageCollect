@@ -16,6 +16,7 @@ from config import ConfInfo
 import machine_types as machp
 #the command system
 from data import CMDFILE
+from enviroment import EnvSetting
 
 FILE_CONF = DIR_CONF + '/mc_initial.conf'
 FILE_LOG  = DIR_ORI  + '/runlog.txt'
@@ -41,7 +42,6 @@ mclog.info("read config file from %s"%FILE_CONF)
 # if linux do relevant things
 def do_linux():
 	import get_info_from_linux as gl
-	linux_exe = gl.linux_process(mclog,DIR_TOOLS,OS_ARC)
 	#set the directory the info store in 
 	linux_exe.set_dir_info(DIR_INFO_STORED)
 	#set the cmdfile to execute
@@ -53,6 +53,9 @@ def do_linux():
 	file4baseinfo = conf.get_file_baseinfo()
 	items_info    = conf.get_items()
 	bmc_info      = conf.get_bmc()
+	packages_info = conf.get_packages()
+	envset = EnvSetting(mclog,packages_info)
+	linux_exe = gl.linux_process(mclog,DIR_TOOLS,OS_ARC,envset)
 	linux_exe.set_filename_4baseinfo(file4baseinfo)
 	linux_exe.set_ProductName(PRODUCT_NAME)
 	linux_exe.set_bmc(bmc_info)

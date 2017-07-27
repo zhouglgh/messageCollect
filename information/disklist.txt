@@ -1,4 +1,0 @@
-smartctl --scan
-{
-/dev/sda -d scsi # /dev/sda, SCSI device
-}
