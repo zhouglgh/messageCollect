@@ -15,6 +15,7 @@ class EnvSetting(object):
 		ecdsa         = self.packages_path['ecdsa']
 		try:
 			import paramiko
+			res=3
 		except ImportError:
 			res=0
 			curdir = os.getcwd()
@@ -22,6 +23,7 @@ class EnvSetting(object):
 				os.chdir(ecdsa_path)
 				if os.path.exists('setup.py'):
 					if os.system("python setup.py install") == 0:
+						print 'res = ' + str(res)
 						res+=1
 					else:
 						self.logger.warning("error in install 'ecdsa'")
@@ -29,6 +31,7 @@ class EnvSetting(object):
 				os.chdir(pycrypto_path)
 				if os.path.exists('setup.py'):
 					if os.system("python setup.py install") == 0:
+						print 'res = ' + str(res)
 						res+=1
 					else:
 						self.logger.warning("error in install 'pycrypto'")
@@ -36,11 +39,12 @@ class EnvSetting(object):
 				os.chdir(paramiko_path)
 				if os.path.exists('setup.py'):
 					if os.system("python setup.py install") == 0:
-							res+=1
+						print 'res = ' + str(res)
+						res+=1
 					else:
 						self.logger.warning("error in install 'pycrypto' or 'ecdsa'")
 			os.chdir(curdir)
-			return res
+		return res
 	#for all file in cmd_path exec 'chmod +x  %s'
 	def do_chmod_x(self,cmd_path):
 		command = "files=$(find %s -type f);for file in $files;do chmod +x $file;done"%cmd_path

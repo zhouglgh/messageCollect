@@ -4,8 +4,7 @@ modified by zhougl, at 2017-07-05
 '''
 import os
 import common
-import paramiko
-from enviroment import EnvSetting
+import threading
 
 
 class linux_process(object):
@@ -24,6 +23,7 @@ class linux_process(object):
 		self.items        = []
 		self.dir_tools    = dir_tools
 		self.common_exe   = common.common_process(logger)
+		self.threads      = []
 		#install the needed packages and change the mode of executable file
 		self.do = {
 			"cpu"   :self.do_cpu,
@@ -84,6 +84,10 @@ class linux_process(object):
 			catagory = item[0]
 			need_all = item[1]
 			self.do[catagory](need_all)
+		for thread in self.threads:	
+			if thread.isAlive():
+				self.logger.info("%s is running, Please wait."%(thread.name))
+			thread.join()
 
 	#get information for the type:cpu.
 	def do_cpu(self,need_all):
@@ -91,12 +95,19 @@ class linux_process(object):
 		self.do_normal('cpu',need_all)
 		if 'k1-910' == self.ProductName.lower():
 			if self.bmc:
-				res = self.do_register(self.bmc[0],self.bmc[1],self.bmc[2])
-	def do_register(self,hostname,user,password):
+				thread_do_register = threading.Thread(target=self._do_register,name='do_register')
+				self.threads.append(thread_do_register)
+				thread_do_register.start()
+	def _do_register(self):
+		hostname = self.bmc[0]
+		user     = self.bmc[1]
+		password = self.bmc[2]
 		res = self.envset.do_test_paramiko()
 		if res != 3:
 			self.logger.warning("Installing package 'paramiko' error, can not get the cpu register information!")
 			return -1
+		else:
+			import paramiko
 		client = paramiko.SSHClient()
 		client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 		client.connect(hostname=hostname,username=user,password=password)
@@ -105,7 +116,9 @@ class linux_process(object):
 		filepath = self.dir_info + '/' + filename
 		self.common_exe.save_results_formate(filepath,0,['k2_csr_access',res,''])
 		file_all_cpu = self.dir_info + '/cpu_all_csr.txt'
-		res = client.exec_command("dump_cpu_csr 1> %s"%file_all_cpu)
+		command = "file=/log/cpu_all_csr;if [ -f $file ];then cat $file;else dump_cpu_csr&&cat $file;fi"
+		res = client.exec_command(command,timeout=300)[1].read()
+		self.common_exe.save_results_formate(file_all_cpu,0,['dump_cpu_csr',res,''])
 		client.close()
 	#get information for the type:mem.
 	def do_mem(self,need_all):
@@ -157,14 +170,17 @@ class linux_process(object):
 			return
 		str_to_func = {
 			"3108":self.do_raid_3108,
-			"2208":self.do_raid_3108,
+			"2208":self.do_raid_2208,
 			"2308":self.do_raid_2308,
 			#"3008":self.do_raid_3008,
 			"Adaptec" :self.do_raid_adaptec,
 		}
-		cmd_string = mycmds[type_ofraid]
+		if type_ofraid == '2208':
+			cmd_string = mycmds[mycmds[type_ofraid]]
+		else:
+			cmd_string = mycmds[type_ofraid]
 		dir_raid = self.common_exe.check_dir(self.dir_info,'raid%s'%(type_ofraid))
-		self.envset.do_chmod_x(dir_raid)
+		self.envset.do_chmod_x(self.dir_tools)
 		str_to_func[type_ofraid](dir_raid,cmd_string,tool_megacli)
 		
 	#get raid info for 3108
@@ -175,17 +191,20 @@ class linux_process(object):
 			tool_3108 = cmd_string['tool']['32']
 		tool_3108 = self.dir_tools + '/' + tool_3108
 		commands = cmd_string['cmds']
-		for cmd2file in commands['tool_3108']:
+		for cmd2file in commands['tool_3108'].items():
 			command = tool_3108 + ' ' + cmd2file[1]
 			filename=cmd2file[0]
 			file_path = dir_raid + '/' + filename
 			self._do_cmd_to_file(command,file_path)
-		for cmd2file in commands['tool_megacli']:
+		for cmd2file in commands['tool_megacli'].items():
 			command = tool_megacli + ' ' + cmd2file[1]
 			filename=cmd2file[0]
 			file_path = dir_raid + '/' + filename
 			self._do_cmd_to_file(command,file_path)
 
+	#get raid info for 2208
+	def do_raid_2208(self,dir_raid,cmd_string,tool_megacli):
+		self.do_raid_3108(dir_raid,cmd_string,tool_megacli)
 	#get raid info for 2308
 	def do_raid_2308(self,dir_raid,cmd_string,tool_megacli):
 		tool_ircu =  cmd_string['tool']['sas2ircu']
@@ -325,42 +344,3 @@ class linux_process(object):
 			f.write(write_title)
 		for cmd in yourbaseinfo.values()[0]:
 			self.common_exe.process_and_save(cmd,self.file4baseinfo,1)
-			
-	#get information for the type:type_info.
-	def get_info_simple(self,type_info):
-		print type_info
-		cmdstring = self.CMDS[self.OS_TYPE]
-		#check if there is the 'type_info' key
-		str_type_info = ''.join(type_info)
-		if (not cmdstring.has_key(type_info)):
-			self.logger.error("There is no type named %s"%str_type_info)
-			return -1;
-		self.logger.info("catch info from %s."%str_type_info)
-		#mkdir for this operation
-		dir_type = self.common_exe.check_dir(self.dir_info,type_info)
-		what2do = cmdstring[type_info]
-		sav = what2do.keys()
-		cmd = what2do.values()
-		lengths =len(sav)
-		lengthc =len(cmd)
-		if(lengths != lengthc):
-			self.logger.error("extract file from cmdfile error.len(%s)!=len(%s)"%(' '.join(sav),' '.join(cmd)))
-			return -1;
-		i=0;
-		while i < lengths:
-			out_ = dir_type + '/' + sav[i];
-			cmd_ = cmd[i];
-			appended=0
-			if (type(cmd_) == type('')):
-				self.common_exe.process(cmd_,out_,appended)
-			elif (type(cmd_) == type([])):
-				for cmd__ in cmd_:
-					self.common_exe.process(cmd__,out_,appended)
-					appended+=1;
-			else:
-				self.logger.error("cmd translate error!Please check!")
-				exit(-1)
-			i+=1;
-		#process i times
-		return i
-

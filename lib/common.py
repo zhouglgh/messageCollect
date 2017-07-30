@@ -50,7 +50,7 @@ class common_process(object):
 				end = f.tell()
 				return begin - end
 		elif reserr:
-			self.logger.error("error from %s"%reserr)
+			self.logger.warning("error from %s"%reserr)
 			return 0
 		else:
 			return 0

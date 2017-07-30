@@ -39,10 +39,15 @@ conf    = ConfInfo(FILE_CONF,mclog)
 print conf.get_bmc()
 mclog.info("read config file from %s"%FILE_CONF)
 
+
 # if linux do relevant things
 def do_linux():
 	import get_info_from_linux as gl
 	#set the directory the info store in 
+	packages_info = conf.get_packages()
+	#predoing prepare the enviroment
+	envset = EnvSetting(mclog,packages_info)
+	linux_exe = gl.linux_process(mclog,DIR_TOOLS,OS_ARC,envset)
 	linux_exe.set_dir_info(DIR_INFO_STORED)
 	#set the cmdfile to execute
 	if( not CMDFILE):
@@ -53,9 +58,6 @@ def do_linux():
 	file4baseinfo = conf.get_file_baseinfo()
 	items_info    = conf.get_items()
 	bmc_info      = conf.get_bmc()
-	packages_info = conf.get_packages()
-	envset = EnvSetting(mclog,packages_info)
-	linux_exe = gl.linux_process(mclog,DIR_TOOLS,OS_ARC,envset)
 	linux_exe.set_filename_4baseinfo(file4baseinfo)
 	linux_exe.set_ProductName(PRODUCT_NAME)
 	linux_exe.set_bmc(bmc_info)
