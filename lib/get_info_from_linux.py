@@ -29,16 +29,12 @@ class linux_process(object):
 			"cpu"   :self.do_cpu,
 			"mem"   :self.do_mem,
 			"nic"   :self.do_nic,
-			#"net"   :self.do_net,
 			"bios"  :self.do_bios,
 			"disk"  :self.do_disk,
 			"driver":self.do_driver,
-			#"kernel":self.do_kernel,
 			"system":self.do_system,
 			"raid":self.do_raid,
 			"bmc":self.do_bmc,
-			#"config":self.do_config,
-			#"fs"    :self.do_fs
 		}
 	#set ProductName
 	def set_ProductName(self,name):
